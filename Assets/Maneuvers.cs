@@ -25,6 +25,10 @@ public class Maneuvers : MonoBehaviour
         SingletonPattern();
 
         fuel = GetComponent<Fuel>();
+    }
+
+    private void Start()
+    {
         key = SelectManeuver.Instance.GetComponent<TurnKey>();
     }
 

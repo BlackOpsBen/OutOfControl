@@ -1261,7 +1261,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 492681394}
   m_OnClick:
     m_PersistentCalls:
@@ -1941,7 +1941,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 686183419}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2042920106}
+        m_MethodName: DeclareManeuver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &686183419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2248,7 +2259,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &819948511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4379,7 +4390,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1987861609}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2042920103}
+        m_MethodName: SetKeyTurn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1987861609
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4429,6 +4451,10 @@ GameObject:
   - component: {fileID: 2042920099}
   - component: {fileID: 2042920101}
   - component: {fileID: 2042920102}
+  - component: {fileID: 2042920103}
+  - component: {fileID: 2042920106}
+  - component: {fileID: 2042920105}
+  - component: {fileID: 2042920104}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -4501,6 +4527,58 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   grantedText: {fileID: 343639668}
   deniedText: {fileID: 425034466}
+--- !u!114 &2042920103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042920097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6e26bb84f9ac204d996d74f554add12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  executeButton: {fileID: 492681393}
+--- !u!114 &2042920104
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042920097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de3d4f214e60254ea25e46ebcb2fb30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crewStatusText: {fileID: 819948510}
+--- !u!114 &2042920105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042920097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b2a05b277362cc4c8f9e9a647057b36, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minDelay: 0.5
+  maxDelay: 5
+--- !u!114 &2042920106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042920097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fe6e8ea259c8584a9b1e543e1b605a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5222564630508927793
 PrefabInstance:
   m_ObjectHideFlags: 0

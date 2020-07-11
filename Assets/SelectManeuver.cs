@@ -40,7 +40,8 @@ public class SelectManeuver : MonoBehaviour
             maneuvers[i] = new Maneuver
             {
                 allowed = false,
-                denied = false
+                denied = false,
+                crewConfirmed = false
             };
         }
 
@@ -106,6 +107,36 @@ public class SelectManeuver : MonoBehaviour
             }
         }
     }
+
+    public void SetConfirmedManeuver(int confirmedManeuver)
+    {
+        for (int i = 0; i < maneuvers.Length; i++)
+        {
+            if (i == confirmedManeuver)
+            {
+                maneuvers[i].crewConfirmed = true;
+            }
+            else
+            {
+                maneuvers[i].crewConfirmed = false;
+            }
+        }
+    }
+
+    public void CompleteManeuver()
+    {
+        ResetStatuses();
+    }
+
+    private void ResetStatuses()
+    {
+        for (int i = 0; i < maneuvers.Length; i++)
+        {
+            maneuvers[i].allowed = false;
+            maneuvers[i].denied = false;
+            maneuvers[i].crewConfirmed = false;
+        }
+    }
 }
 
 public struct Maneuver
@@ -113,4 +144,5 @@ public struct Maneuver
     public string name;
     public bool allowed;
     public bool denied;
+    public bool crewConfirmed;
 }

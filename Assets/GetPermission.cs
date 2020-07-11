@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GetPermission : MonoBehaviour
 {
-    private float threshold = 0.5f;
+    private float threshold = 0.1f;
     private float moodChange = 0.1f;
 
     public void ProcessRequest(int request)

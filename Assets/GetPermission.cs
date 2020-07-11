@@ -44,6 +44,9 @@ public class GetPermission : MonoBehaviour
 
         delay = AudioManager.Instance.PlayGranted(); // TODO utilize delay.
 
+
+        DisableButtons.Instance.ToggleButtons(true);
+
         SelectManeuver.Instance.SetAllowedManeuver(maneuver);
     }
 
@@ -53,7 +56,10 @@ public class GetPermission : MonoBehaviour
         Debug.Log("Negative, Splorer One. Do not " + SelectManeuver.Instance.GetManeuvers()[maneuver].name + ". Repeat, do not " + SelectManeuver.Instance.GetManeuvers()[maneuver].name + "."); ;
 
         delay = AudioManager.Instance.PlayDenied(); // TODO utilize delay.
-        
+
+
+        DisableButtons.Instance.ToggleButtons(true);
+
         SelectManeuver.Instance.SetDeniedManeuver(maneuver);
     }
 }

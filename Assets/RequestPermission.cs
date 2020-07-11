@@ -27,6 +27,7 @@ public class RequestPermission : MonoBehaviour
 
     private IEnumerator RequestManeuver(int selectedManeuver)
     {
+        DisableButtons.Instance.ToggleButtons(false);
         float delay;
         switch (SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name)
         {

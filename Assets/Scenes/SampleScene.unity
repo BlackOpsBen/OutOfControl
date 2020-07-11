@@ -4620,6 +4620,7 @@ GameObject:
   - component: {fileID: 2042920106}
   - component: {fileID: 2042920105}
   - component: {fileID: 2042920104}
+  - component: {fileID: 2042920107}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -4744,6 +4745,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe6e8ea259c8584a9b1e543e1b605a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2042920107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042920097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4b7d03bbb081d448a9b49d55d9c38e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 1523903963}
+  - {fileID: 130444071}
+  - {fileID: 1074750321}
+  - {fileID: 846603778}
+  - {fileID: 607118696}
+  - {fileID: 686183418}
 --- !u!1001 &5222564630508927793
 PrefabInstance:
   m_ObjectHideFlags: 0

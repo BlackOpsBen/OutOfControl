@@ -14,6 +14,16 @@ public class Maneuvers : MonoBehaviour
 
     private bool isExecuting = false;
 
+    private Fuel fuel;
+
+    private TurnKey key;
+
+    private void Awake()
+    {
+        fuel = GetComponent<Fuel>();
+        key = SelectManeuver.Instance.GetComponent<TurnKey>();
+    }
+
     private void Update()
     {
         transform.position = transform.position + transform.forward * currentSpeed * Time.deltaTime;
@@ -77,25 +87,44 @@ public class Maneuvers : MonoBehaviour
 
     private void Execute()
     {
-        string selectedManeuver = SelectManeuver.Instance.GetManeuvers()[SelectManeuver.Instance.GetSelectedManeuver()].name;
+        bool isStopping = false;
 
-        switch (selectedManeuver)
+        if (fuel.GetCurrentFuel() > 0f)
         {
-            case "Turn Left":
-                TurnLeft();
-                break;
-            case "Turn Right":
-                TurnRight();
-                break;
-            case "Throttle Up":
-                ThrottleUp();
-                break;
-            case "Throttle Down":
-                ThrottleDown();
-                break;
-            default:
-                Debug.LogError("Invalid string!");
-                break;
+            fuel.PauseRecharge();
+
+            string selectedManeuver = SelectManeuver.Instance.GetManeuvers()[SelectManeuver.Instance.GetSelectedManeuver()].name;
+
+            switch (selectedManeuver)
+            {
+                case "Turn Left":
+                    TurnLeft();
+                    break;
+                case "Turn Right":
+                    TurnRight();
+                    break;
+                case "Throttle Up":
+                    ThrottleUp();
+                    break;
+                case "Throttle Down":
+                    ThrottleDown();
+                    isStopping = true;
+                    break;
+                default:
+                    Debug.LogError("Invalid string!");
+                    break;
+            }
+
+            fuel.BurnFuel();
+        }
+        else
+        {
+            EndExecute();
+        }
+
+        if (isStopping && currentSpeed == float.Epsilon)
+        {
+            EndExecute();
         }
     }
 
@@ -108,5 +137,13 @@ public class Maneuvers : MonoBehaviour
     public void EndExecute()
     {
         isExecuting = false;
+        SelectManeuver.Instance.CompleteManeuver();
+        key.SetKeyTurn();
+        fuel.ResumeRecharge();
+    }
+
+    public void DebugSetSpeed(float speed)
+    {
+        currentSpeed = speed;
     }
 }

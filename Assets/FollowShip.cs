@@ -9,7 +9,8 @@ public class FollowShip : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, ship.position, Time.deltaTime * smoothing);
+        transform.position = ship.position;
+        //transform.position = Vector3.Lerp(transform.position, ship.position, Time.deltaTime * smoothing);
         transform.rotation = Quaternion.Slerp(transform.rotation, ship.rotation, Time.deltaTime * smoothing);
     }
 }

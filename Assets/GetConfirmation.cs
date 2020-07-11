@@ -32,6 +32,9 @@ public class GetConfirmation : MonoBehaviour
 
     public void CancelGetResponse()
     {
-        StopCoroutine(pendingResponse);
+        if (pendingResponse != null)
+        {
+            StopCoroutine(pendingResponse);
+        }
     }
 }

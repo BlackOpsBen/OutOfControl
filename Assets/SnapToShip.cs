@@ -6,7 +6,7 @@ public class SnapToShip : MonoBehaviour
 {
     [SerializeField] private Transform ship;
 
-    private void Update()
+    private void LateUpdate()
     {
         transform.position = ship.position;
     }

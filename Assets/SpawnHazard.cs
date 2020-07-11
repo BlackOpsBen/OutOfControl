@@ -69,7 +69,10 @@ public class SpawnHazard : MonoBehaviour
         else
         {
             hazards[hazard].objectPool[lastPooled].GetComponent<Spawn>().Respawn();
-            hazards[hazard].objectPool[lastPooled].GetComponent<InitializeVector>().Reset();
+            if (hazards[hazard].name == "Asteroid")
+            {
+                hazards[hazard].objectPool[lastPooled].GetComponent<InitializeVector>().Reset();
+            }
         }
         hazards[hazard].lastPooled++;
         if (hazards[hazard].lastPooled > maxEachPool-1)

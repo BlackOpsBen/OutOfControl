@@ -5,7 +5,7 @@ using UnityEngine;
 public class GetConfirmation : MonoBehaviour
 {
     [SerializeField] private float minDelay = 0.5f;
-    [SerializeField] private float maxDelay = 5f;
+    [SerializeField] private float maxDelay = 2f;
 
     private IEnumerator pendingResponse;
 

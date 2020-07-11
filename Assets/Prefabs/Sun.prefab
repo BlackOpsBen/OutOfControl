@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5998272794772826387}
+  - component: {fileID: 1830684062702207763}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -31,6 +32,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1830684062702207763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778914156553106949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 789e579293f570a448fa37691214899f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  minStartDist: 1000
+  maxStartDist: 2000
+  minHeading: -10
+  maxHeading: 10
+  isEnabled: 1
 --- !u!1 &3190992809158480469
 GameObject:
   m_ObjectHideFlags: 0

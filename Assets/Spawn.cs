@@ -7,6 +7,9 @@ public class Spawn : MonoBehaviour
     [SerializeField] private float minStartDist = 49f;
     [SerializeField] private float maxStartDist = 50f;
 
+    [SerializeField] private float minHeading = 0f;
+    [SerializeField] private float maxHeading = 360f;
+
     public bool isEnabled = true;
     
 
@@ -20,7 +23,7 @@ public class Spawn : MonoBehaviour
 
     public void Respawn()
     {
-        float heading = UnityEngine.Random.Range(0f, 360f);
+        float heading = UnityEngine.Random.Range(minHeading, maxHeading);
         Quaternion startRotation = Quaternion.Euler(0f, heading, 0f);
         float randDistance = UnityEngine.Random.Range(minStartDist, maxStartDist);
 

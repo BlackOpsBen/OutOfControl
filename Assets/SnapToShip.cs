@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class SnapToShip : MonoBehaviour
 {
-    [SerializeField] private Transform ship;
-
     private void LateUpdate()
     {
-        transform.position = ship.position;
+        transform.position = Maneuvers.Instance.transform.position;
     }
 }

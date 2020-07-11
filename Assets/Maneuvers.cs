@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Maneuvers : MonoBehaviour
 {
+    public static Maneuvers Instance { get; private set; }
+
     private float currentSpeed = 0f;
 
     private float turnSpeed = 20f;
@@ -20,8 +22,22 @@ public class Maneuvers : MonoBehaviour
 
     private void Awake()
     {
+        SingletonPattern();
+
         fuel = GetComponent<Fuel>();
         key = SelectManeuver.Instance.GetComponent<TurnKey>();
+    }
+
+    private void SingletonPattern()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
     }
 
     private void Update()

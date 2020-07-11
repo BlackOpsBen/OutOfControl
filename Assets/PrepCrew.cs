@@ -18,7 +18,7 @@ public class PrepCrew : MonoBehaviour
         if (SelectManeuver.Instance.CheckForSelection())
         {
             outstandingAnnouncement = GetCrewConfirmation(SelectManeuver.Instance.GetSelectedManeuver());
-            StartCoroutine(GetCrewConfirmation(SelectManeuver.Instance.GetSelectedManeuver()));
+            StartCoroutine(outstandingAnnouncement);
         }
         else
         {

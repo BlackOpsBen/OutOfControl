@@ -12,11 +12,22 @@ public class Maneuvers : MonoBehaviour
     
     private float deceleration = 40f;
 
+    private bool isExecuting = false;
+
     private void Update()
     {
         transform.position = transform.position + transform.forward * currentSpeed * Time.deltaTime;
-        //transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + currentSpeed * Time.deltaTime);
 
+        if (isExecuting)
+        {
+            Execute();
+        }
+
+        DebugginInputs();
+    }
+
+    private void DebugginInputs()
+    {
         if (Input.GetKey(KeyCode.UpArrow))
         {
             ThrottleUp();
@@ -62,5 +73,40 @@ public class Maneuvers : MonoBehaviour
     public float GetCurrentSpeed()
     {
         return currentSpeed;
+    }
+
+    private void Execute()
+    {
+        string selectedManeuver = SelectManeuver.Instance.GetManeuvers()[SelectManeuver.Instance.GetSelectedManeuver()].name;
+
+        switch (selectedManeuver)
+        {
+            case "Turn Left":
+                TurnLeft();
+                break;
+            case "Turn Right":
+                TurnRight();
+                break;
+            case "Throttle Up":
+                ThrottleUp();
+                break;
+            case "Throttle Down":
+                ThrottleDown();
+                break;
+            default:
+                Debug.LogError("Invalid string!");
+                break;
+        }
+    }
+
+    public void StartExecute()
+    {
+        isExecuting = true;
+        AudioManager.Instance.Play("Execute");
+    }
+
+    public void EndExecute()
+    {
+        isExecuting = false;
     }
 }

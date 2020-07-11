@@ -7,9 +7,13 @@ public class GetConfirmation : MonoBehaviour
     [SerializeField] private float minDelay = 0.5f;
     [SerializeField] private float maxDelay = 5f;
 
+    private IEnumerator pendingResponse;
+
     public void GetCrewResponse(int declaredManeuver)
     {
-        StartCoroutine(GetDelayedResponse(declaredManeuver));
+        pendingResponse = GetDelayedResponse(declaredManeuver);
+        StartCoroutine(pendingResponse);
+
     }
 
     private IEnumerator GetDelayedResponse(int declaredManeuver)
@@ -24,5 +28,10 @@ public class GetConfirmation : MonoBehaviour
     {
         Debug.Log("Copy that. Prepared to " + SelectManeuver.Instance.GetManeuvers()[SelectManeuver.Instance.GetSelectedManeuver()] + ".");
         AudioManager.Instance.PlayConfirmed();
+    }
+
+    public void CancelGetResponse()
+    {
+        StopCoroutine(pendingResponse);
     }
 }

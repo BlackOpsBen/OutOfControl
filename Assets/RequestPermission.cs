@@ -17,7 +17,7 @@ public class RequestPermission : MonoBehaviour
         if (SelectManeuver.Instance.CheckForSelection())
         {
             outstandingRequest = RequestManeuver(SelectManeuver.Instance.GetSelectedManeuver());
-            StartCoroutine(RequestManeuver(SelectManeuver.Instance.GetSelectedManeuver()));
+            StartCoroutine(outstandingRequest);
         }
         else
         {

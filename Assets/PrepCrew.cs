@@ -6,6 +6,8 @@ public class PrepCrew : MonoBehaviour
 {
     private GetConfirmation getConfirmation;
 
+    private IEnumerator outstandingAnnouncement;
+
     private void Awake()
     {
         getConfirmation = GetComponent<GetConfirmation>();
@@ -15,7 +17,8 @@ public class PrepCrew : MonoBehaviour
     {
         if (SelectManeuver.Instance.CheckForSelection())
         {
-            GetCrewConfirmation(SelectManeuver.Instance.GetSelectedManeuver());
+            outstandingAnnouncement = GetCrewConfirmation(SelectManeuver.Instance.GetSelectedManeuver());
+            StartCoroutine(GetCrewConfirmation(SelectManeuver.Instance.GetSelectedManeuver()));
         }
         else
         {
@@ -23,26 +26,33 @@ public class PrepCrew : MonoBehaviour
         }
     }
 
-    private void GetCrewConfirmation(int selectedManeuver)
+    private IEnumerator GetCrewConfirmation(int selectedManeuver)
     {
+        float delay;
         switch (SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name)
         {
-            // TODO probably don't need a case switch.
-            // Also, this seems very familiar to RequestPermission
             case "Turn Left":
                 Debug.Log("Attention all crew. Prepare to " + SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name + ".");
+                delay = AudioManager.Instance.PlayPrepareLeft();
+                yield return new WaitForSeconds(delay);                
                 getConfirmation.GetCrewResponse(selectedManeuver);
                 break;
             case "Turn Right":
                 Debug.Log("Attention all crew. Prepare to " + SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name + ".");
+                delay = AudioManager.Instance.PlayPrepareRight();
+                yield return new WaitForSeconds(delay);
                 getConfirmation.GetCrewResponse(selectedManeuver);
                 break;
             case "Throttle Up":
                 Debug.Log("Attention all crew. Prepare to " + SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name + ".");
+                delay = AudioManager.Instance.PlayPrepareUp();
+                yield return new WaitForSeconds(delay);
                 getConfirmation.GetCrewResponse(selectedManeuver);
                 break;
             case "Throttle Down":
                 Debug.Log("Attention all crew. Prepare to " + SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name + ".");
+                delay = AudioManager.Instance.PlayPrepareDown();
+                yield return new WaitForSeconds(delay);
                 getConfirmation.GetCrewResponse(selectedManeuver);
                 break;
             default:

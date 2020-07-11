@@ -6,6 +6,8 @@ public class RequestPermission : MonoBehaviour
 {
     private GetPermission getPermission;
 
+    private IEnumerator outstandingRequest;
+
     private void Awake()
     {
         getPermission = GetComponent<GetPermission>();
@@ -14,7 +16,8 @@ public class RequestPermission : MonoBehaviour
     {
         if (SelectManeuver.Instance.CheckForSelection())
         {
-            RequestManeuver(SelectManeuver.Instance.GetSelectedManeuver());
+            outstandingRequest = RequestManeuver(SelectManeuver.Instance.GetSelectedManeuver());
+            StartCoroutine(RequestManeuver(SelectManeuver.Instance.GetSelectedManeuver()));
         }
         else
         {
@@ -22,25 +25,33 @@ public class RequestPermission : MonoBehaviour
         }
     }
 
-    private void RequestManeuver(int selectedManeuver)
+    private IEnumerator RequestManeuver(int selectedManeuver)
     {
+        float delay;
         switch (SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name)
         {
-            // TODO probably don't need a case switch.
             case "Turn Left":
                 Debug.Log("Ship to Houston, requesting permission to " + SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name + ".");
+                delay = AudioManager.Instance.PlayRequestLeft();
+                yield return new WaitForSeconds(delay);
                 getPermission.ProcessRequest(selectedManeuver);
                 break;
             case "Turn Right":
                 Debug.Log("Ship to Houston, requesting permission to " + SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name + ".");
+                delay = AudioManager.Instance.PlayRequestRight();
+                yield return new WaitForSeconds(delay);
                 getPermission.ProcessRequest(selectedManeuver);
                 break;
             case "Throttle Up":
                 Debug.Log("Ship to Houston, requesting permission to " + SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name + ".");
+                delay = AudioManager.Instance.PlayRequestUp();
+                yield return new WaitForSeconds(delay);
                 getPermission.ProcessRequest(selectedManeuver);
                 break;
             case "Throttle Down":
                 Debug.Log("Ship to Houston, requesting permission to " + SelectManeuver.Instance.GetManeuvers()[selectedManeuver].name + ".");
+                delay = AudioManager.Instance.PlayRequestDown();
+                yield return new WaitForSeconds(delay);
                 getPermission.ProcessRequest(selectedManeuver);
                 break;
             default:

@@ -73,102 +73,116 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayRequestLeft()
+    public float PlayRequestLeft()
     {
         int rand = UnityEngine.Random.Range(0, requestTurnLeft.Length);
         Sound s = requestTurnLeft[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayRequestRight()
+    public float PlayRequestRight()
     {
         int rand = UnityEngine.Random.Range(0, requestTurnRight.Length);
         Sound s = requestTurnRight[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayRequestUp()
+    public float PlayRequestUp()
     {
         int rand = UnityEngine.Random.Range(0, requestThrottleUp.Length);
         Sound s = requestThrottleUp[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayRequestDown()
+    public float PlayRequestDown()
     {
         int rand = UnityEngine.Random.Range(0, requestThrottleDown.Length);
         Sound s = requestThrottleDown[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayGranted()
+    public float PlayGranted()
     {
         int rand = UnityEngine.Random.Range(0, granted.Length);
         Sound s = granted[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayDenied()
+    public float PlayDenied()
     {
         int rand = UnityEngine.Random.Range(0, denied.Length);
         Sound s = denied[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayPrepareLeft()
+    public float PlayPrepareLeft()
     {
         int rand = UnityEngine.Random.Range(0, prepareTurnLeft.Length);
         Sound s = prepareTurnLeft[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayPrepareRight()
+    public float PlayPrepareRight()
     {
         int rand = UnityEngine.Random.Range(0, prepareTurnRight.Length);
         Sound s = prepareTurnRight[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayPrepareUp()
+    public float PlayPrepareUp()
     {
         int rand = UnityEngine.Random.Range(0, prepareThrottleUp.Length);
         Sound s = prepareThrottleUp[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayPrepareDown()
+    public float PlayPrepareDown()
     {
         int rand = UnityEngine.Random.Range(0, prepareThrottleDown.Length);
         Sound s = prepareThrottleDown[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayDelay()
+    public float PlayDelay()
     {
         int rand = UnityEngine.Random.Range(0, delay.Length);
         Sound s = delay[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayDelayYes()
+    public float PlayDelayYes()
     {
         int rand = UnityEngine.Random.Range(0, delayYes.Length);
         Sound s = delayYes[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayDelayNo()
+    public float PlayDelayNo()
     {
         int rand = UnityEngine.Random.Range(0, delayNo.Length);
         Sound s = delayNo[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
-    public void PlayConfirmed()
+    public float PlayConfirmed()
     {
         int rand = UnityEngine.Random.Range(0, confirmed.Length);
         Sound s = confirmed[rand];
         s.source.Play();
+        return s.clip.length;
     }
 
     public void Play(string name)

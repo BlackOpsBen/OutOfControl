@@ -39,13 +39,21 @@ public class GetPermission : MonoBehaviour
 
     private void AllowManeuver(int maneuver)
     {
+        float delay;
         Debug.Log("Roger that, Splorer One. Permission granted. Proceed to " + SelectManeuver.Instance.GetManeuvers()[maneuver].name + ".");
+
+        delay = AudioManager.Instance.PlayGranted(); // TODO utilize delay.
+
         SelectManeuver.Instance.SetAllowedManeuver(maneuver);
     }
 
     private void DenyManeuver(int maneuver)
     {
+        float delay;
         Debug.Log("Negative, Splorer One. Do not " + SelectManeuver.Instance.GetManeuvers()[maneuver].name + ". Repeat, do not " + SelectManeuver.Instance.GetManeuvers()[maneuver].name + "."); ;
+
+        delay = AudioManager.Instance.PlayDenied(); // TODO utilize delay.
+        
         SelectManeuver.Instance.SetDeniedManeuver(maneuver);
     }
 }

@@ -23,5 +23,6 @@ public class GetConfirmation : MonoBehaviour
     private void PlayVerbalResponse()
     {
         Debug.Log("Copy that. Prepared to " + SelectManeuver.Instance.GetManeuvers()[SelectManeuver.Instance.GetSelectedManeuver()] + ".");
+        AudioManager.Instance.PlayConfirmed();
     }
 }

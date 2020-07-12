@@ -39,6 +39,7 @@ public class SpawnHazard : MonoBehaviour
         {
             rollTimer = 0f;
             float rand = UnityEngine.Random.Range(0f, maxTimeBetweenHazards);
+            
             if (rand < timeSinceLastHazard)
             {
                 timeSinceLastHazard = 0f;

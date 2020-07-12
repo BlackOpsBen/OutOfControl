@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5998272794772826387}
   - component: {fileID: 1830684062702207763}
+  - component: {fileID: 8087815792385600614}
+  - component: {fileID: 8734735362069948081}
+  - component: {fileID: 4274595990700155771}
+  - component: {fileID: 6952265529183353538}
   m_Layer: 0
   m_Name: Sun
   m_TagString: Untagged
@@ -49,6 +53,62 @@ MonoBehaviour:
   minHeading: 0
   maxHeading: 360
   isEnabled: 1
+--- !u!135 &8087815792385600614
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778914156553106949}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &8734735362069948081
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778914156553106949}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &4274595990700155771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778914156553106949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4493b953560dcfa44a9e7796ba9433cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
+--- !u!114 &6952265529183353538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778914156553106949}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 468b6f8e9280e3042b502617df8e0c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyPFX: {fileID: 996828466373400471, guid: 335c871abe7dd774f8d6ada8bc05d1ba,
+    type: 3}
 --- !u!1 &3190992809158480469
 GameObject:
   m_ObjectHideFlags: 0

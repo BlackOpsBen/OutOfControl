@@ -8,6 +8,8 @@ public class RequestPermission : MonoBehaviour
 
     private IEnumerator outstandingRequest;
 
+    [SerializeField] private ButtonTap physicalButton;
+
     private void Awake()
     {
         getPermission = GetComponent<GetPermission>();

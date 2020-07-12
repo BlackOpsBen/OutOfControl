@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtonSwitch : MonoBehaviour
+public class ButtonTap : MonoBehaviour
 {
     private float inactiveYPos = 0f;
     private float activeYPos = -1.3f;
@@ -39,6 +39,11 @@ public class ButtonSwitch : MonoBehaviour
 
         Vector3 desiredLocalPos = new Vector3(transform.localPosition.x, desiredLocalYPos, transform.localPosition.z);
         transform.localPosition = Vector3.Lerp(transform.localPosition, desiredLocalPos, Time.deltaTime * speed);
+
+        if (transform.localPosition.y < activeYPos + .1f)
+        {
+            isActive = false;
+        }
     }
 
     public void ToggleButtonActive(bool value)

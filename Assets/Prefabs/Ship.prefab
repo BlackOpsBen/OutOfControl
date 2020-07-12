@@ -4960,7 +4960,7 @@ MonoBehaviour:
   maxStartDist: 10000
   minHeading: 0
   maxHeading: 360
-  isEnabled: 0
+  isEnabled: 1
 --- !u!114 &6103742427661734851
 MonoBehaviour:
   m_ObjectHideFlags: 0

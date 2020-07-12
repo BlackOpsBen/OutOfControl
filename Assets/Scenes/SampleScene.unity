@@ -4822,6 +4822,11 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
+  - name: Strike
+    clip: {fileID: 8300000, guid: e0c63f86e4554b64395874e3b0ebccbb, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
 --- !u!4 &1030853978
 Transform:
   m_ObjectHideFlags: 0
@@ -10080,11 +10085,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2285403717903440692, guid: a41a39169aa4a5847aa3f946db171aea,
-        type: 3}
-      propertyPath: isEnabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3594928156656734086, guid: a41a39169aa4a5847aa3f946db171aea,
         type: 3}
       propertyPath: m_LocalPosition.x

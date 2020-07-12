@@ -179,6 +179,14 @@ public class AudioManager : MonoBehaviour
         return s.clip.length;
     }
 
+    public float PlayScold()
+    {
+        int rand = UnityEngine.Random.Range(0, scold.Length);
+        Sound s = scold[rand];
+        s.source.Play();
+        return s.clip.length;
+    }
+
     public float PlayConfirmed()
     {
         int rand = UnityEngine.Random.Range(0, confirmed.Length);

@@ -43,11 +43,14 @@ public class StrikeSystem : MonoBehaviour
 
     private void GameOver()
     {
+        StrikeWarning();
         GetComponent<EngGameSystem>().ShowDefeatScreen(false);
     }
 
     private void StrikeWarning()
     {
         Debug.Log("Warning: Unautorized maneuver!");
+        AudioManager.Instance.Play("Strike");
+        AudioManager.Instance.PlayScold();
     }
 }

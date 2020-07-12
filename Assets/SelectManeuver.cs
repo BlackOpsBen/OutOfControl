@@ -11,6 +11,8 @@ public class SelectManeuver : MonoBehaviour
 
     private Maneuver[] maneuvers = new Maneuver[4];
 
+    [SerializeField] private ButtonSwitch[] physicalButtons;
+
     private int selectedManeuver;
 
     private bool isSelected = false;
@@ -41,7 +43,8 @@ public class SelectManeuver : MonoBehaviour
             {
                 allowed = false,
                 denied = false,
-                crewConfirmed = false
+                crewConfirmed = false,
+                physicalButton = physicalButtons[i]
             };
         }
 
@@ -58,6 +61,8 @@ public class SelectManeuver : MonoBehaviour
         selectedManeuverLabel.text = maneuvers[maneuver].name;
 
         AudioManager.Instance.Play("Button");
+
+        AnimateButtons(maneuver);
     }
 
     public int GetSelectedManeuver()
@@ -157,6 +162,21 @@ public class SelectManeuver : MonoBehaviour
         Debug.LogWarning("Invalid maneuver name in Check For Valid Maneuver?");
         return false;
     }
+
+    private void AnimateButtons(int activeButton)
+    {
+        for (int i = 0; i < physicalButtons.Length; i++)
+        {
+            if (i == activeButton)
+            {
+                physicalButtons[i].ToggleButtonActive(true);
+            }
+            else
+            {
+                physicalButtons[i].ToggleButtonActive(false);
+            }
+        }
+    }
 }
 
 public struct Maneuver
@@ -165,4 +185,5 @@ public struct Maneuver
     public bool allowed;
     public bool denied;
     public bool crewConfirmed;
+    public ButtonSwitch physicalButton;
 }

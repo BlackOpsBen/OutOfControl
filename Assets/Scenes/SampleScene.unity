@@ -491,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.49019608}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -525,8 +525,9 @@ GameObject:
   - component: {fileID: 91973409}
   - component: {fileID: 91973411}
   - component: {fileID: 91973410}
+  - component: {fileID: 91973412}
   m_Layer: 0
-  m_Name: Button (4)
+  m_Name: physicalButtonUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,7 +565,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5985192954898896064, guid: a4dadfb3fafc62c489deae0b68f04511, type: 3}
+  - {fileID: 2100000, guid: 29932674270bc6546a04c0d7d04c2578, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -593,6 +594,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 91973408}
   m_Mesh: {fileID: -5447036705194824928, guid: a4dadfb3fafc62c489deae0b68f04511, type: 3}
+--- !u!114 &91973412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91973408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604acb4f7251a974cb03e697fad71def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localYPos: 0
+  isActive: 0
+  offColor: {r: 0, g: 0, b: 0, a: 0}
+  onColor: {r: 0.5372549, g: 0.41960785, b: 0.02745098, a: 0}
 --- !u!1 &130444069
 GameObject:
   m_ObjectHideFlags: 0
@@ -991,8 +1008,9 @@ GameObject:
   - component: {fileID: 205747128}
   - component: {fileID: 205747130}
   - component: {fileID: 205747129}
+  - component: {fileID: 205747131}
   m_Layer: 0
-  m_Name: Button (1)
+  m_Name: physicalButtonRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1030,7 +1048,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5985192954898896064, guid: a4dadfb3fafc62c489deae0b68f04511, type: 3}
+  - {fileID: 2100000, guid: 29932674270bc6546a04c0d7d04c2578, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1059,6 +1077,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 205747127}
   m_Mesh: {fileID: -5447036705194824928, guid: a4dadfb3fafc62c489deae0b68f04511, type: 3}
+--- !u!114 &205747131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 205747127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604acb4f7251a974cb03e697fad71def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localYPos: 0
+  isActive: 0
+  offColor: {r: 0, g: 0, b: 0, a: 0}
+  onColor: {r: 0.5372549, g: 0.41960785, b: 0.02745098, a: 0}
 --- !u!1 &210535764
 GameObject:
   m_ObjectHideFlags: 0
@@ -5233,8 +5267,9 @@ GameObject:
   - component: {fileID: 1136263902}
   - component: {fileID: 1136263904}
   - component: {fileID: 1136263903}
+  - component: {fileID: 1136263905}
   m_Layer: 0
-  m_Name: Button (2)
+  m_Name: physicalButtonLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5272,7 +5307,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5985192954898896064, guid: a4dadfb3fafc62c489deae0b68f04511, type: 3}
+  - {fileID: 2100000, guid: 29932674270bc6546a04c0d7d04c2578, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5301,6 +5336,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136263901}
   m_Mesh: {fileID: -5447036705194824928, guid: a4dadfb3fafc62c489deae0b68f04511, type: 3}
+--- !u!114 &1136263905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136263901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604acb4f7251a974cb03e697fad71def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localYPos: 0
+  isActive: 0
+  offColor: {r: 0, g: 0, b: 0, a: 0}
+  onColor: {r: 0.5372549, g: 0.41960785, b: 0.02745098, a: 0}
 --- !u!1 &1154329754
 GameObject:
   m_ObjectHideFlags: 0
@@ -7321,8 +7372,9 @@ GameObject:
   - component: {fileID: 1813415707}
   - component: {fileID: 1813415709}
   - component: {fileID: 1813415708}
+  - component: {fileID: 1813415710}
   m_Layer: 0
-  m_Name: Button (3)
+  m_Name: physicalButtonDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7360,7 +7412,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5985192954898896064, guid: a4dadfb3fafc62c489deae0b68f04511, type: 3}
+  - {fileID: 2100000, guid: 29932674270bc6546a04c0d7d04c2578, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -7389,6 +7441,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813415706}
   m_Mesh: {fileID: -5447036705194824928, guid: a4dadfb3fafc62c489deae0b68f04511, type: 3}
+--- !u!114 &1813415710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813415706}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604acb4f7251a974cb03e697fad71def, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  localYPos: 0
+  isActive: 0
+  offColor: {r: 0, g: 0, b: 0, a: 0}
+  onColor: {r: 0.5372549, g: 0.41960785, b: 0.02745098, a: 0}
 --- !u!1 &1818185970
 GameObject:
   m_ObjectHideFlags: 0
@@ -8569,6 +8637,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectedManeuverLabel: {fileID: 130607693}
+  physicalButtons:
+  - {fileID: 1136263905}
+  - {fileID: 205747131}
+  - {fileID: 91973412}
+  - {fileID: 1813415710}
 --- !u!114 &2042920099
 MonoBehaviour:
   m_ObjectHideFlags: 0

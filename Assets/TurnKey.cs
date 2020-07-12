@@ -10,5 +10,6 @@ public class TurnKey : MonoBehaviour
     public void SetKeyTurn()
     {
         executeButton.interactable = !executeButton.interactable;
+        executeButton.gameObject.SetActive(!executeButton.gameObject.activeSelf);
     }
 }

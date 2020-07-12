@@ -43,7 +43,7 @@ public class StrikeSystem : MonoBehaviour
 
     private void GameOver()
     {
-        Debug.Log("Game over! Too many strikes!");
+        GetComponent<EngGameSystem>().ShowDefeatScreen(false);
     }
 
     private void StrikeWarning()

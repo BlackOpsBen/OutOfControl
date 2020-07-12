@@ -9662,4 +9662,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minStartDist: 499
   maxStartDist: 500
+  minHeading: 0
+  maxHeading: 360
   isEnabled: 1

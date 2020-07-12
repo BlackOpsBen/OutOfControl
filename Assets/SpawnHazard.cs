@@ -7,9 +7,6 @@ public class SpawnHazard : MonoBehaviour
 {
     [SerializeField] private GameObject indicatorPrefab;
 
-    [SerializeField] private GameObject[] indicators;
-    private int lastPooledIndicator = 0;
-
     [SerializeField] private Hazard[] hazards;
 
     [SerializeField] private int maxEachPool = 10;
@@ -22,8 +19,6 @@ public class SpawnHazard : MonoBehaviour
 
     private void Awake()
     {
-        indicators = new GameObject[maxEachPool];
-
         foreach (Hazard hazard in hazards)
         {
             hazard.objectPool = new GameObject[maxEachPool];
@@ -65,6 +60,8 @@ public class SpawnHazard : MonoBehaviour
         if (hazards[hazard].objectPool[lastPooled] == null)
         {
             hazards[hazard].objectPool[lastPooled] = Instantiate(hazards[hazard].objectPrefab, transform.position, Quaternion.identity);
+            GameObject indicator = Instantiate(indicatorPrefab, transform.position, Quaternion.identity);
+            indicator.GetComponent<PointToHazard>().SetTarget(hazards[hazard].objectPool[lastPooled].transform);
         }
         else
         {
@@ -78,17 +75,6 @@ public class SpawnHazard : MonoBehaviour
         if (hazards[hazard].lastPooled > maxEachPool-1)
         {
             hazards[hazard].lastPooled = 0;
-        }
-
-        if (indicators[lastPooledIndicator] == null)
-        {
-            indicators[lastPooledIndicator] = Instantiate(indicatorPrefab, transform.position, Quaternion.identity);
-        }
-        indicators[lastPooled].GetComponent<PointToHazard>().SetTarget(hazards[hazard].objectPool[lastPooled].transform);
-        lastPooledIndicator++;
-        if (lastPooledIndicator > maxEachPool-1)
-        {
-            lastPooledIndicator = 0;
         }
     }
 }

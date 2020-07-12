@@ -38,5 +38,6 @@ public class RotateKey : MonoBehaviour
     public void TurnTheKey()
     {
         isActive = !isActive;
+        AudioManager.Instance.Play("Key");
     }
 }

@@ -31,11 +31,21 @@ public class MollyGuard : MonoBehaviour
             }
         }
 
+        rotation = Mathf.Clamp(rotation, closedXRot, openXRot);
         transform.rotation = Quaternion.Euler(new Vector3(rotation, 0f, 180f));
         //Debug.Log(transform.rotation.eulerAngles);
     }
     public void ToggleMollyGuard()
     {
+        if (isOpen)
+        {
+            AudioManager.Instance.Play("Molly_Close");
+        }
+        else
+        {
+            AudioManager.Instance.Play("Molly_Open");
+        }
+
         isOpen = !isOpen;
     }
 }

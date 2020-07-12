@@ -44,10 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 789e579293f570a448fa37691214899f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minStartDist: 1000
-  maxStartDist: 2000
-  minHeading: -10
-  maxHeading: 10
+  minStartDist: 2000
+  maxStartDist: 3000
+  minHeading: 0
+  maxHeading: 360
   isEnabled: 1
 --- !u!1 &3190992809158480469
 GameObject:

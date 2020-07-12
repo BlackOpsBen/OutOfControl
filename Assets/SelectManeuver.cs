@@ -57,7 +57,7 @@ public class SelectManeuver : MonoBehaviour
         isSelected = true;
         selectedManeuverLabel.text = maneuvers[maneuver].name;
 
-
+        AudioManager.Instance.Play("Button");
     }
 
     public int GetSelectedManeuver()

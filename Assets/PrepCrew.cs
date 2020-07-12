@@ -24,6 +24,8 @@ public class PrepCrew : MonoBehaviour
         {
             Debug.Log("You must make a maneuver selection before telling your crew your intentions.");
         }
+
+        AudioManager.Instance.Play("Comms");
     }
 
     private IEnumerator GetCrewConfirmation(int selectedManeuver)

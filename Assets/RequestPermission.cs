@@ -23,6 +23,8 @@ public class RequestPermission : MonoBehaviour
         {
             Debug.Log("You must make a maneuver selection before making contact with Houston.");
         }
+
+        AudioManager.Instance.Play("Comms");
     }
 
     private IEnumerator RequestManeuver(int selectedManeuver)

@@ -22,6 +22,7 @@ public class AudioManager : MonoBehaviour
     public Sound[] delay;
     public Sound[] delayYes;
     public Sound[] delayNo;
+    public Sound[] scold;
 
     [Header("Crew")]
     public Sound[] confirmed;
@@ -45,6 +46,7 @@ public class AudioManager : MonoBehaviour
         CreateAudioSources(ref delay);
         CreateAudioSources(ref delayYes);
         CreateAudioSources(ref delayNo);
+        CreateAudioSources(ref scold);
         CreateAudioSources(ref confirmed);
         CreateAudioSources(ref sounds);
     }

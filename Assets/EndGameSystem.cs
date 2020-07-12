@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EngGameSystem : MonoBehaviour
+public class EndGameSystem : MonoBehaviour
 {
     [SerializeField] private GameObject defeatScreen;
     [SerializeField] private GameObject victoryScreen;

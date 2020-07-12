@@ -44,7 +44,7 @@ public class StrikeSystem : MonoBehaviour
     private void GameOver()
     {
         StrikeWarning();
-        GetComponent<EngGameSystem>().ShowDefeatScreen(false);
+        GetComponent<EndGameSystem>().ShowDefeatScreen(false);
     }
 
     private void StrikeWarning()

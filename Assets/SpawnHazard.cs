@@ -26,10 +26,10 @@ public class SpawnHazard : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            CreateNewEvent();
-        }
+        //if (Input.GetKeyDown(KeyCode.Return))
+        //{
+        //    CreateNewEvent();
+        //}
 
         rollTimer += Time.deltaTime;
 

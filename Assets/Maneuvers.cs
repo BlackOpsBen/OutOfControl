@@ -63,31 +63,31 @@ public class Maneuvers : MonoBehaviour
             Execute();
         }
 
-        DebugginInputs();
+        //DebugginInputs();
     }
 
-    private void DebugginInputs()
-    {
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            ThrottleUp();
-        }
+    //private void DebugginInputs()
+    //{
+    //    if (Input.GetKey(KeyCode.UpArrow))
+    //    {
+    //        ThrottleUp();
+    //    }
 
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            ThrottleDown();
-        }
+    //    if (Input.GetKey(KeyCode.DownArrow))
+    //    {
+    //        ThrottleDown();
+    //    }
 
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            TurnLeft();
-        }
+    //    if (Input.GetKey(KeyCode.LeftArrow))
+    //    {
+    //        TurnLeft();
+    //    }
 
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            TurnRight();
-        }
-    }
+    //    if (Input.GetKey(KeyCode.RightArrow))
+    //    {
+    //        TurnRight();
+    //    }
+    //}
 
     public void ThrottleUp()
     {

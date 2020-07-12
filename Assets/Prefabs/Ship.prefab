@@ -4904,6 +4904,7 @@ GameObject:
   - component: {fileID: 661374613}
   - component: {fileID: 661374609}
   - component: {fileID: 661374610}
+  - component: {fileID: 4119720415834876001}
   m_Layer: 0
   m_Name: Ship
   m_TagString: Player
@@ -5039,6 +5040,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+--- !u!114 &4119720415834876001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7372542964724614899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d6190420a42f084c87809aefa486526, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pfxGroups:
+  - maneuver: Turn Left
+    pfxGroupObject: {fileID: 5297977010527994237}
+    pfxSystems: []
+  - maneuver: Turn Right
+    pfxGroupObject: {fileID: 7074611661558719663}
+    pfxSystems: []
+  - maneuver: Throttle Up
+    pfxGroupObject: {fileID: 6913090544954271291}
+    pfxSystems: []
+  - maneuver: Throttle Down
+    pfxGroupObject: {fileID: 2658492037792137612}
+    pfxSystems: []
 --- !u!1001 &405240943077778209
 PrefabInstance:
   m_ObjectHideFlags: 0

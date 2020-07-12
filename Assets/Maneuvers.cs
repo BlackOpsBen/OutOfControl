@@ -22,6 +22,10 @@ public class Maneuvers : MonoBehaviour
 
     private ManeuverPFX maneuverPFX;
 
+    private StrikeSystem strikeSystem;
+
+    private bool alreadyChecked;
+
     private void Awake()
     {
         SingletonPattern();
@@ -29,6 +33,8 @@ public class Maneuvers : MonoBehaviour
         fuel = GetComponent<Fuel>();
 
         maneuverPFX = GetComponent<ManeuverPFX>();
+
+        strikeSystem = FindObjectOfType<StrikeSystem>();
     }
 
     private void Start()
@@ -141,6 +147,12 @@ public class Maneuvers : MonoBehaviour
 
             fuel.BurnFuel();
             maneuverPFX.SetPFXPlaying(selectedManeuver, true);
+
+            if (!alreadyChecked)
+            {
+                alreadyChecked = true;
+                CheckForValidManeuver(selectedManeuver);
+            }
         }
         else
         {
@@ -167,10 +179,23 @@ public class Maneuvers : MonoBehaviour
         fuel.ResumeRecharge();
         maneuverPFX.SetPFXPlaying(false);
         Debug.Log("Called Stop on PFX");
+        alreadyChecked = false;
     }
 
     public void DebugSetSpeed(float speed)
     {
         currentSpeed = speed;
+    }
+
+    private void CheckForValidManeuver(string executedManeuver)
+    {
+        if (SelectManeuver.Instance.isManeuverValid(executedManeuver))
+        {
+            Debug.Log("Maneuver is valid.");
+        }
+        else
+        {
+            strikeSystem.GainStrike();
+        }
     }
 }

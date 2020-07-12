@@ -137,6 +137,26 @@ public class SelectManeuver : MonoBehaviour
             maneuvers[i].crewConfirmed = false;
         }
     }
+
+    public bool isManeuverValid(string maneuver)
+    {
+        for (int i = 0; i < maneuvers.Length; i++)
+        {
+            if (maneuvers[i].name == maneuver)
+            {
+                if (maneuvers[i].allowed && maneuvers[i].crewConfirmed)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+        }
+        Debug.LogWarning("Invalid maneuver name in Check For Valid Maneuver?");
+        return false;
+    }
 }
 
 public struct Maneuver

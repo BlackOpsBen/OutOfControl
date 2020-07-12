@@ -5040,6 +5040,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  destroyPFX: {fileID: 996828466373400471, guid: 335c871abe7dd774f8d6ada8bc05d1ba,
+    type: 3}
+  shipModel: {fileID: 5197891495595763454}
 --- !u!114 &4119720415834876001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5637,6 +5640,12 @@ PrefabInstance:
 --- !u!4 &9113534254764299501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: e3f3812d9f878434e88c3811dd58d630,
+    type: 3}
+  m_PrefabInstance: {fileID: 4252369814620553207}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5197891495595763454 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: e3f3812d9f878434e88c3811dd58d630,
     type: 3}
   m_PrefabInstance: {fileID: 4252369814620553207}
   m_PrefabAsset: {fileID: 0}

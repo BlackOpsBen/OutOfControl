@@ -9,25 +9,33 @@ public class Health : MonoBehaviour
 
     [SerializeField] GameObject destroyPFX;
 
+    [SerializeField] GameObject shipModel;
+
     private void Awake()
     {
         currentHealth = maxHealth;
     }
     public void DealDamage(float amount)
     {
-        Debug.Log("Dealt " + amount + " damage to ship!");
+        Debug.Log("Dealt " + amount + " damage to ship! Remaining health: " + currentHealth);
         currentHealth -= amount;
-        currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
-        if (currentHealth == float.Epsilon)
+        //currentHealth = Mathf.Clamp(currentHealth, 0f, maxHealth);
+        if (currentHealth < 0f)
         {
-            DestroyThis();
+            KillPlayer();
         }
     }
 
-    private void DestroyThis()
+    private void KillPlayer()
     {
         Instantiate(destroyPFX, transform.position, Quaternion.identity);
-        Destroy(gameObject);
+        shipModel.SetActive(false);
         AudioManager.Instance.Play("Explosion");
+        FindObjectOfType<EndGameSystem>().ShowDefeatScreen(true);
+    }
+
+    public float GetCurrentHealthFactor()
+    {
+        return Mathf.InverseLerp(0f, maxHealth, currentHealth);
     }
 }

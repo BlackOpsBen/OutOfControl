@@ -4754,6 +4754,18 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &7098143153613953596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317917726892026734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaee31080eca2114c8743b2736a17873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5555080478011993450
 GameObject:
   m_ObjectHideFlags: 0
@@ -9508,18 +9520,6 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
---- !u!114 &7098143153613953596
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1317917726892026734}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eaee31080eca2114c8743b2736a17873, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9151523394034436512
 GameObject:
   m_ObjectHideFlags: 0
@@ -9629,7 +9629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4493b953560dcfa44a9e7796ba9433cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 20
 --- !u!114 &4935074752139615339
 MonoBehaviour:
   m_ObjectHideFlags: 0

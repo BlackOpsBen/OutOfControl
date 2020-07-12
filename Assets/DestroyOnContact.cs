@@ -8,7 +8,6 @@ public class DestroyOnContact : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.name);
         DestroyThis();
     }
 

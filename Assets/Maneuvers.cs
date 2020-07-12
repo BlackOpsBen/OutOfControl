@@ -169,6 +169,7 @@ public class Maneuvers : MonoBehaviour
     {
         isExecuting = true;
         AudioManager.Instance.Play("Execute");
+        AudioManager.Instance.PlayLoop("Thrusters");
     }
 
     public void EndExecute()
@@ -180,6 +181,8 @@ public class Maneuvers : MonoBehaviour
         maneuverPFX.SetPFXPlaying(false);
         Debug.Log("Called Stop on PFX");
         alreadyChecked = false;
+
+        AudioManager.Instance.StopLoop("Thrusters");
     }
 
     public void DebugSetSpeed(float speed)

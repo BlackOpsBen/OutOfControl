@@ -4827,6 +4827,11 @@ MonoBehaviour:
     volume: 0.5
     pitch: 1
     source: {fileID: 0}
+  - name: Thrusters
+    clip: {fileID: 8300000, guid: ecd0d321356c2d44dbe64471ef75e3aa, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
 --- !u!4 &1030853978
 Transform:
   m_ObjectHideFlags: 0
@@ -8640,6 +8645,7 @@ GameObject:
   - component: {fileID: 2042920108}
   - component: {fileID: 2042920109}
   - component: {fileID: 2042920110}
+  - component: {fileID: 2042920111}
   m_Layer: 0
   m_Name: UI Manager
   m_TagString: Untagged
@@ -8838,6 +8844,19 @@ MonoBehaviour:
   restartButton: {fileID: 1305432727}
   reasonDestroyed: {fileID: 1546061771}
   reasonUnauthorized: {fileID: 1897847470}
+--- !u!114 &2042920111
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042920097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5055f933f376964989d47c1881ab715, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthBar: {fileID: 474609763}
 --- !u!1 &2118782720
 GameObject:
   m_ObjectHideFlags: 0

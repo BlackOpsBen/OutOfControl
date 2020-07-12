@@ -4828,7 +4828,7 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
   - name: Thrusters
-    clip: {fileID: 8300000, guid: ecd0d321356c2d44dbe64471ef75e3aa, type: 3}
+    clip: {fileID: 8300000, guid: 13288d2aecdc6b54e9a02a76b6b567b7, type: 3}
     volume: 0.5
     pitch: 1
     source: {fileID: 0}

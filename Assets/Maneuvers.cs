@@ -20,11 +20,15 @@ public class Maneuvers : MonoBehaviour
 
     private TurnKey key;
 
+    private ManeuverPFX maneuverPFX;
+
     private void Awake()
     {
         SingletonPattern();
 
         fuel = GetComponent<Fuel>();
+
+        maneuverPFX = GetComponent<ManeuverPFX>();
     }
 
     private void Start()
@@ -136,13 +140,14 @@ public class Maneuvers : MonoBehaviour
             }
 
             fuel.BurnFuel();
+            maneuverPFX.SetPFXPlaying(selectedManeuver, true);
         }
         else
         {
             EndExecute();
         }
 
-        if (isStopping && currentSpeed == float.Epsilon)
+        if (isStopping && currentSpeed < float.Epsilon)
         {
             EndExecute();
         }
@@ -160,6 +165,8 @@ public class Maneuvers : MonoBehaviour
         SelectManeuver.Instance.CompleteManeuver();
         key.SetKeyTurn();
         fuel.ResumeRecharge();
+        maneuverPFX.SetPFXPlaying(false);
+        Debug.Log("Called Stop on PFX");
     }
 
     public void DebugSetSpeed(float speed)

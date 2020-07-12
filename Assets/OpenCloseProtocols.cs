@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class OpenCloseProtocols : MonoBehaviour
 {
+    [SerializeField] private GameObject openButton;
+    [SerializeField] private GameObject closeButton;
+
     [SerializeField] private float xPos;
 
     private float openXPos = -28f;
@@ -42,5 +45,8 @@ public class OpenCloseProtocols : MonoBehaviour
     public void ToggleViewProtocols(bool value)
     {
         isOpen = value;
+
+        openButton.SetActive(!value);
+        closeButton.SetActive(value);
     }
 }
